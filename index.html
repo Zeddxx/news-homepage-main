@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <!-- bootstrap starts -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap ends -->
+    <!-- stylesheet starts -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- stylesheet ends -->
+    <title>Frontend Mentor | News homepage</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    
+
+    <main class="container">
+      <nav class="navbar">
+        <div class="container inner-nav">
+          <div class="main-logo">
+              <img src="./assets/images/logo.svg" alt="Logo"/>
+          </div>
+          <div class="nav-lists flex">
+            <a href="">Home</a>
+            <a href="">New</a>
+            <a href="">Popular</a>
+            <a href="">Trending</a>
+            <a href="">Categories</a>
+          </div>
+          <div class="hamburger-btn">
+            <span class="bars"></span>
+            <span class="bars sec">
+              <span class="sec-bar"></span>
+              <span class="sec-bar"></span>
+            </span>
+            <span class="bars"></span>
+          </div>
+        </div>
+      </nav>
+      <section class="top-section">
+        <div class="left-container">
+          <div class="img-container"></div>
+          <div class="content-container">
+            <div class="heading-div">
+              <h1>The Bright Future of Web 3.0?</h1>
+            </div>
+            <div class="para-div">
+              <p>
+                We dive into the next evolution of the web that claims to put
+                the power of the platforms back into the hands of the people.
+                But is it really fulfilling its promise?
+              </p>
+              <button>Read More</button>
+            </div>
+          </div>
+        </div>
+        <div class="right-container">
+          <h2>New</h2>
+          <div class="div-1">
+            <h4>Hydrogen VS Electric Cars</h4>
+            <p>Will hydrogen-fueled cars ever catch
+              up to EVs?</p>
+          </div>
+          <span class="line"></span>
+          <div class="div-2">
+            <h4>The Downsides of AI Artistry</h4>
+            <p> What are the possible adverse
+              effects of on-demand AI image generation?</p>
+          </div>
+          <span class="line"></span>
+          <div class="div-3">
+            <h4>Is VC Funding Drying Up?</h4>
+            <p>Private
+              funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+          </div>
+        </div>
+      </section>
+      <section class="bottom-container">
+        <div class="retro-div inner-div">
+          <div class="img-div">
+            <img src="./assets/images/image-retro-pcs.jpg" alt="retro pc image">
+          </div>
+          <div class="content-div">
+            <h5>01</h5>
+            <h6>Reviving Retro PCs</h6>
+            <p>What happens when old PCs are given modern upgrades?</p>
+          </div>
+        </div>
+        <div class="laptop-div inner-div">
+          <div class="img-div">
+            <img src="./assets/images/image-top-laptops.jpg" alt="top laptops">
+          </div>
+          <div class="content-div">
+            <h5>02</h5>
+            <h6>Top 10 Laptops of 2022</h6>
+            <p>Our best picks for various needs and budgets.</p>
+          </div>
+        </div>
+        <div class="gaming-div inner-div">
+          <div class="img-div">
+            <img src="./assets/images/image-gaming-growth.jpg" alt="growth of gaming">
+          </div>
+          <div class="content-div">
+            <h5>03</h5>
+            <h6>The Growth of Gaming</h6>
+            <p>How the pandemic has sparked fresh opportunities.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const hamburgerBtn = document.querySelector('.hamburger-btn');
+const navMobile = document.querySelector('.nav-lists');
+const activeClass = 'active';
+const aliveClass = 'alive';
+let isHamburgerOpen = false;
+
+function toggleNav() {
+  hamburgerBtn.classList.toggle(activeClass);
+  navMobile.classList.toggle(aliveClass);
+  
+  isHamburgerOpen = !isHamburgerOpen;
+
+  if (isHamburgerOpen) {
+    document.body.style.overflow = 'hidden'; // Disable scroll
+  } else {
+    document.body.style.overflow = ''; // Enable scroll
+  }
+}
+
+function closeNavIfOpen() {
+  if (isHamburgerOpen) {
+    toggleNav();
+  }
+}
+
+hamburgerBtn.addEventListener('click', toggleNav);
+window.addEventListener('scroll', closeNavIfOpen);
+
+    </script>
+  </body>
+</html>
