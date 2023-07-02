@@ -30,6 +30,7 @@
     
 
     <main class="container">
+      <div class="overlay"></div>
       <nav class="navbar">
         <div class="container inner-nav">
           <div class="main-logo">
@@ -129,29 +130,32 @@
 const navMobile = document.querySelector('.nav-lists');
 const activeClass = 'active';
 const aliveClass = 'alive';
+const showClass = 'show';
+const overlayEl = document.querySelector('.overlay');
 let isHamburgerOpen = false;
 
 function toggleNav() {
   hamburgerBtn.classList.toggle(activeClass);
   navMobile.classList.toggle(aliveClass);
+  overlayEl.classList.toggle(showClass);
   
   isHamburgerOpen = !isHamburgerOpen;
 
   if (isHamburgerOpen) {
     document.body.style.overflow = 'hidden'; // Disable scroll
+    window.addEventListener('scroll', disableScroll);
   } else {
     document.body.style.overflow = ''; // Enable scroll
+    window.removeEventListener('scroll', disableScroll);
   }
 }
 
-function closeNavIfOpen() {
-  if (isHamburgerOpen) {
-    toggleNav();
-  }
+function disableScroll(event) {
+  event.preventDefault();
+  event.stopPropagation();
 }
 
 hamburgerBtn.addEventListener('click', toggleNav);
-window.addEventListener('scroll', closeNavIfOpen);
 
     </script>
   </body>
