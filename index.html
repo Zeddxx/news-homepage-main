@@ -27,14 +27,12 @@
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
   <body>
-    
-
     <main class="container">
       <div class="overlay"></div>
       <nav class="navbar">
         <div class="container inner-nav">
           <div class="main-logo">
-              <img src="./assets/images/logo.svg" alt="Logo"/>
+            <img src="./assets/images/logo.svg" alt="Logo" />
           </div>
           <div class="nav-lists flex">
             <a href="">Home</a>
@@ -73,52 +71,64 @@
         <div class="right-container">
           <h2>New</h2>
           <div class="div-1">
-            <h4>Hydrogen VS Electric Cars</h4>
-            <p>Will hydrogen-fueled cars ever catch
-              up to EVs?</p>
+            <a href="#" title="Read More!">Hydrogen VS Electric Cars</a>
+            <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
           </div>
           <span class="line"></span>
           <div class="div-2">
-            <h4>The Downsides of AI Artistry</h4>
-            <p> What are the possible adverse
-              effects of on-demand AI image generation?</p>
+            <a href="#" title="Read More!">The Downsides of AI Artistry</a>
+            <p>
+              What are the possible adverse effects of on-demand AI image
+              generation?
+            </p>
           </div>
           <span class="line"></span>
           <div class="div-3">
-            <h4>Is VC Funding Drying Up?</h4>
-            <p>Private
-              funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+            <a href="#" title="Read More!">Is VC Funding Drying Up?</a>
+            <p>
+              Private funding by VC firms is down 50% YOY. We take a look at
+              what that means.
+            </p>
           </div>
         </div>
       </section>
       <section class="bottom-container">
         <div class="retro-div inner-div">
           <div class="img-div">
-            <img src="./assets/images/image-retro-pcs.jpg" alt="retro pc image">
+            <img
+              src="./assets/images/image-retro-pcs.jpg"
+              alt="retro pc image"
+            />
           </div>
           <div class="content-div">
             <h5>01</h5>
-            <h6>Reviving Retro PCs</h6>
+            <a href="#" title="See Post!">Reviving Retro PCs</a>
             <p>What happens when old PCs are given modern upgrades?</p>
           </div>
         </div>
         <div class="laptop-div inner-div">
           <div class="img-div">
-            <img src="./assets/images/image-top-laptops.jpg" alt="top laptops">
+            <img
+              src="./assets/images/image-top-laptops.jpg"
+              alt="top laptops"
+            />
           </div>
           <div class="content-div">
             <h5>02</h5>
-            <h6>Top 10 Laptops of 2022</h6>
+            <a href="#" title="See Post!">Top 10 Laptops of 2022</a>
             <p>Our best picks for various needs and budgets.</p>
           </div>
         </div>
         <div class="gaming-div inner-div">
           <div class="img-div">
-            <img src="./assets/images/image-gaming-growth.jpg" alt="growth of gaming">
+            <img
+              src="./assets/images/image-gaming-growth.jpg"
+              alt="growth of gaming"
+            />
           </div>
           <div class="content-div">
             <h5>03</h5>
-            <h6>The Growth of Gaming</h6>
+            <a href="#" title="See Post!">The Growth of Gaming</a>
             <p>How the pandemic has sparked fresh opportunities.</p>
           </div>
         </div>
@@ -126,37 +136,36 @@
     </main>
 
     <script>
-      const hamburgerBtn = document.querySelector('.hamburger-btn');
-const navMobile = document.querySelector('.nav-lists');
-const activeClass = 'active';
-const aliveClass = 'alive';
-const showClass = 'show';
-const overlayEl = document.querySelector('.overlay');
-let isHamburgerOpen = false;
+      const hamburgerBtn = document.querySelector(".hamburger-btn");
+      const navMobile = document.querySelector(".nav-lists");
+      const activeClass = "active";
+      const aliveClass = "alive";
+      const showClass = "show";
+      const overlayEl = document.querySelector(".overlay");
+      let isHamburgerOpen = false;
 
-function toggleNav() {
-  hamburgerBtn.classList.toggle(activeClass);
-  navMobile.classList.toggle(aliveClass);
-  overlayEl.classList.toggle(showClass);
-  
-  isHamburgerOpen = !isHamburgerOpen;
+      function toggleNav() {
+        hamburgerBtn.classList.toggle(activeClass);
+        navMobile.classList.toggle(aliveClass);
+        overlayEl.classList.toggle(showClass);
 
-  if (isHamburgerOpen) {
-    document.body.style.overflow = 'hidden'; // Disable scroll
-    window.addEventListener('scroll', disableScroll);
-  } else {
-    document.body.style.overflow = ''; // Enable scroll
-    window.removeEventListener('scroll', disableScroll);
-  }
-}
+        isHamburgerOpen = !isHamburgerOpen;
 
-function disableScroll(event) {
-  event.preventDefault();
-  event.stopPropagation();
-}
+        if (isHamburgerOpen) {
+          document.body.style.overflow = "hidden"; // Disable scroll
+          window.addEventListener("scroll", disableScroll);
+        } else {
+          document.body.style.overflow = ""; // Enable scroll
+          window.removeEventListener("scroll", disableScroll);
+        }
+      }
 
-hamburgerBtn.addEventListener('click', toggleNav);
+      function disableScroll(event) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
 
+      hamburgerBtn.addEventListener("click", toggleNav);
     </script>
   </body>
 </html>

@@ -43,6 +43,9 @@ main {
   color: var(--fc-sub-head);
   text-decoration: none;
 }
+.nav-lists a:hover {
+  color: var(--fc-read-btn);
+}
 .hamburger-btn {
   display: none;
 }
@@ -66,7 +69,7 @@ main {
 .right-container {
   height: 100%;
   width: 30%;
-  background: #000;
+  background: var(--fc-main-head);
   padding: 20px 1.1rem;
   display: flex;
   flex-direction: column;
@@ -76,14 +79,19 @@ main {
   color: var(--fc-soft-orange-new);
   font-weight: 700;
 }
-.right-container > div > h4 {
+.right-container > div > a {
   color: var(--fc-offwhite);
   font-size: 1.3rem;
   font-weight: 600;
+  text-decoration: none;
+}
+.right-container > div > a:hover {
+  color: var(--fc-soft-orange-new);
 }
 .right-container > div > p {
   color: var(--fc-sub-head);
   margin: 0;
+  font-size: 0.9rem;
 }
 .line {
   width: 100%;
@@ -108,6 +116,7 @@ main {
   height: 100%;
 }
 .heading-div > h1 {
+  color: var(--fc-main-head);
   line-height: 1;
   font-size: 3rem;
   font-weight: 800;
@@ -128,6 +137,9 @@ main {
   padding: 10px 1rem;
   width: 60%;
 }
+.para-div > button:hover {
+  background: var(--fc-main-head);
+}
 
 .bottom-container {
   display: flex;
@@ -144,8 +156,8 @@ main {
   gap: 1rem;
   align-items: center;
 }
-.overlay{
-    display: none;
+.overlay {
+  display: none;
 }
 .img-div {
   height: 100%;
@@ -165,9 +177,14 @@ main {
   font-size: 2rem;
   font-weight: 700;
 }
-.content-div > h6 {
+.content-div > a {
+  color: var(--fc-main-head);
+  text-decoration: none;
   font-size: 1.1rem;
   font-weight: 800;
+}
+.content-div > a:hover {
+  color: var(--fc-read-btn);
 }
 .content-div > p {
   color: var(--fc-sub-head);
@@ -250,7 +267,7 @@ main {
     overflow-x: hidden !important;
     position: relative;
   }
-  .overlay{
+  .overlay {
     height: 100vh;
     left: 0;
     width: 100vw;
@@ -275,10 +292,13 @@ main {
     transition: all 0.4s ease;
     transform: translateX(100%);
   }
+  .nav-lists a {
+    font-weight: 500;
+  }
   .nav-lists.alive {
     transform: translateX(0%);
   }
-  .overlay.show{
+  .overlay.show {
     display: flex;
     z-index: 2;
   }
